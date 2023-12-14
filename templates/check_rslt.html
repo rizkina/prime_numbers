@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+    {% if status %}
+        <p>{{ num }} is a Prime Number</p>
+    {% else %}
+        <p>{{ num }} is a Not Prime Number</p>
+    {% endif %}
+
+{% endblock %}

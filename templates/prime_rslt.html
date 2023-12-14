@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Prime Numbers Result
+{% endblock %}
+
+{% block main %}
+    <h3>Prime Numbers Result</h3>
+    <p>Between {{ min_limit }} to {{ max_limit }}</p>
+<!-- Buttons to toggle between table and graph -->
+    <div class="btn-group mb-3">
+        <button class="btn btn-primary" onclick="showTable()">Show Table</button>
+        <button class="btn btn-primary" onclick="showGraph()">Show Bar Graph</button>
+        <button class="btn btn-primary" onclick="showGraph1()">Show Histogram Graph</button>
+        <button class="btn btn-primary" onclick="showGraph2()">Show Patern Graph</button>
+    </div>
+    <div class="container mt-3">
+
+    <!-- Table container -->
+        <div id="table-container">
+            {{ table_html|safe }}
+        </div>
+
+    <!-- Graph container -->
+        <div id="graph-container">
+            <img src="{{ url_for('static', filename='images/distr.png') }}">
+        </div>
+        <div id="graph-container1">
+            <img src="{{ url_for('static', filename='images/histo.png') }}">
+        </div>
+        <div id="graph-container2">
+            <img src="{{ url_for('static', filename='images/patrn.png') }}">
+        </div>
+    </div>
+
+<!-- Buttons to toggle between table and graph -->
+    <div class="btn-group mb-3">
+        <button class="btn btn-primary" onclick="showTable()">Show Table</button>
+        <button class="btn btn-primary" onclick="showGraph()">Show Bar Graph</button>
+        <button class="btn btn-primary" onclick="showGraph1()">Show Histogram Graph</button>
+        <button class="btn btn-primary" onclick="showGraph2()">Show Patern Graph</button>
+    </div>
+
+    <script>
+    // JavaScript functions to toggle between table and graph
+        function showTable() {
+            document.getElementById('table-container').style.display = 'block';
+            document.getElementById('graph-container').style.display = 'none';
+            document.getElementById('graph-container1').style.display = 'none';
+            document.getElementById('graph-container2').style.display = 'none';
+        }
+
+        function showGraph() {
+            document.getElementById('table-container').style.display = 'none';
+            document.getElementById('graph-container').style.display = 'block';
+            document.getElementById('graph-container1').style.display = 'none';
+            document.getElementById('graph-container2').style.display = 'none';
+        }
+
+        function showGraph1() {
+            document.getElementById('table-container').style.display = 'none';
+            document.getElementById('graph-container').style.display = 'none';
+            document.getElementById('graph-container1').style.display = 'block';
+            document.getElementById('graph-container2').style.display = 'none';
+        }
+
+        function showGraph2() {
+            document.getElementById('table-container').style.display = 'none';
+            document.getElementById('graph-container').style.display = 'none';
+            document.getElementById('graph-container1').style.display = 'none';
+            document.getElementById('graph-container2').style.display = 'block';
+        }
+    </script>
+{% endblock %}
