@@ -21,3 +21,15 @@ test_project.py file contains:
   1. test_prime_selector to test prime_selector Function
   2. test_is_prime to test is_prime Function
   3. test_sum_primes to sum_primes Function
+
+app.py file contains : command to route for Flask website base on project.py  and helper.py file
+
+helper.py file contains :
+  1. primes_to_dataframe Function to generate a DataFrame with prime numbers in the given range.
+  2. generate_html Function to Generate an HTML representation of a DataFrame with styling.
+  3. distribution Function to  Display a bar chart showing the distribution of prime numbers.
+  4. distr_his Function to Display a histogram showing the distribution of prime numbers.
+  5. patern Function to Display a scatter plot showing the pattern of prime numbers.
+  6. apology Function to Render message as an apology to user.
+
+
